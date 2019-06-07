@@ -4,5 +4,6 @@
 import re
 
 haslo = "LatweHaslo"
+haslo2 = "TrudneHaslo123"
 passwordRegex = re.compile(r'\w*')
-print(passwordRegex.findall(haslo))
+print(passwordRegex.findall(haslo2))
