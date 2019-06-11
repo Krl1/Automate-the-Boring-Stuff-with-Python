@@ -1,16 +1,17 @@
 # Program sprawdzający, czy podane hasło to silne hasło
 # Hasło jest silne, gdy składa się z przynajmniej ośmiu znaków, zawiera zarówno małe
 # jak i duże litery, przynajmniej jedną cyfrę oraz znak specjalny
+# Program pobiera dane skopiowane do schowka
 import re
 import pyperclip
 
-hasla = "LatweHaslo TrudneHaslo123 Kot EWAMAKOTA1231 ewamakota3412 Kotek*7&23 nosoroZec"
+# hasla = "LatweHaslo TrudneHaslo123 Kot EWAMAKOTA1231 ewamakota3412 Kotek*7&23 nosoroZec"
 hasla = text = str(pyperclip.paste())
 # ciąg znaków o długości co najmniej 8
 passwordRegex = re.compile(r'\S{8,}')
 passwordsList = passwordRegex.findall(hasla)
 hasla = ''
-print(passwordsList)
+# print(passwordsList)
 for password in passwordsList:
     hasla += password + " "
 
@@ -29,7 +30,7 @@ passwordRegex = re.compile(r'''
     ''', re.VERBOSE)
 passwordsList = passwordRegex.findall(hasla)
 hasla = ''
-print(passwordsList)
+# print(passwordsList)
 for password in passwordsList:
     hasla += str(password) + " "
 
@@ -48,6 +49,6 @@ passwordRegex = re.compile(r'''
     ''', re.VERBOSE)
 passwordsList = passwordRegex.findall(hasla)
 hasla = ''
-print(passwordsList)
-for password in passwordsList:
-    hasla += str(password) + " "
+print("Strong passwords:")
+for strongPassword in passwordsList:
+    print(strongPassword)
